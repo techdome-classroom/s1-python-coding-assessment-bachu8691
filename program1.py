@@ -13,8 +13,8 @@ class Solution:
             visited[r][c] = True
             dfs(r + 1, c)  # Down
             dfs(r - 1, c)  # Up
-            dfs(r, c + 1)  # Right
-            dfs(r, c - 1)  # Left
+            dfs(r, c + 1)  
+            dfs(r, c - 1)  
 
         island_count = 0
         for r in range(rows):
