@@ -1,5 +1,7 @@
+from typing import List
+
 class Solution:
-    def getTotalIsles(self, grid: list[list[str]]) -> int:
+    def getTotalIsles(self, grid: List[List[str]]) -> int:
         if not grid:
             return 0
 
@@ -11,10 +13,10 @@ class Solution:
             if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] == 'W' or visited[r][c]:
                 return
             visited[r][c] = True
-            dfs(r + 1, c)  
-            dfs(r - 1, c)  
-            dfs(r, c + 1)  
-            dfs(r, c - 1)  
+            dfs(r + 1, c)  # Down
+            dfs(r - 1, c)  # Up
+            dfs(r, c + 1)  # Right
+            dfs(r, c - 1)  # Left
 
         island_count = 0
         for r in range(rows):
